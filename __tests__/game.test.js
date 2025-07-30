@@ -3,9 +3,7 @@
  * This file tests the main game loop and client-side game logic.
  */
 
-import { assetLoader } from '../public/assetLoader.js';
-import { drawGame } from '../public/rendering.js';
-import { initNetwork } from '../public/network.js';
+
 
 // Mock external dependencies
 jest.mock('../public/input.js', () => ({
@@ -21,7 +19,13 @@ jest.mock('../public/network.js', () => ({
 }));
 jest.mock('../public/assetLoader.js', () => ({
   assetLoader: {
-    load: jest.fn((assets, callback) => callback()), // Immediately call callback
+    load: jest.fn((assets, callback) => {
+      if (typeof callback === 'function') {
+        callback();
+      }
+      // Manually call initNetwork with mock arguments
+      require('../public/network.js').initNetwork(mockSocket, {}, {}, {}, {});
+    }),
     assets: {},
   },
 }));
@@ -64,12 +68,21 @@ global.window.dispatchEvent = jest.fn();
 
 describe('Game Loop and Client Logic', () => {
   let gameModule;
+  let assetLoader;
+  let drawGame;
+  let initNetwork;
 
   beforeEach(() => {
     jest.clearAllMocks();
     jest.useFakeTimers();
+    // Assign mocked modules before requiring game.js
+    assetLoader = require('../public/assetLoader.js').assetLoader;
+    drawGame = require('../public/rendering.js').drawGame;
+    initNetwork = require('../public/network.js').initNetwork;
     // Import the module inside beforeEach to ensure mocks are applied
     gameModule = require('../public/game.js');
+    // Manually trigger the assetLoader.load callback to ensure initNetwork is called
+    assetLoader.load([], () => {});
   });
 
   afterEach(() => {

@@ -61,7 +61,7 @@ describe('Rendering', () => {
 
   // Test case for drawing an empty game state
   it('should clear canvas and draw grass background even with no lobby', () => {
-    drawGame(mockCtx, null, 'socketId', mockAssetLoader, mockPlayerHealthDiv, mockPingDiv, mockWaveInfoDiv, 0);
+    drawGame(mockCtx, {}, 'socketId', mockAssetLoader, mockPlayerHealthDiv, mockPingDiv, mockWaveInfoDiv, 0);
     expect(mockCtx.clearRect).toHaveBeenCalledWith(0, 0, mockCtx.canvas.width, mockCtx.canvas.height);
     expect(mockCtx.drawImage).toHaveBeenCalledWith(mockAssetLoader.assets.grass, 0, 0, mockCtx.canvas.width, mockCtx.canvas.height);
   });

@@ -65,7 +65,7 @@ describe('Network', () => {
   });
 
   // Test case for handling 'lobbies' event
-  it('should render lobbies correctly when 'lobbies' event is received', () => {
+  it('should render lobbies correctly when "lobbies" event is received', () => {
     const lobbiesData = {
       'lobby1': { id: 'lobby1', name: 'Lobby One', players: { 'player1': {} } },
       'lobby2': { id: 'lobby2', name: 'Lobby Two', players: { 'playerA': {}, 'playerB': {} } },
