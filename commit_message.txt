@@ -1,1 +1,1 @@
-feature/0-test-workflow: Staging uncommitted changes
+feature/0-test-workflow: Update Jest dependencies
