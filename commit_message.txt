@@ -1,1 +1,1 @@
-feature/0-test-workflow: Add initial test for gameLogic
+feature/1-enhance-test-coverage: Add tests for gameLogic.js
