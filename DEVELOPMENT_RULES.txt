@@ -1,8 +1,0 @@
-1. All work will be done in a feature branch created from `master`.
-2. Feature branches will be named `feature/feature-number`.
-3. Commit messages will include the feature name and its status.
-4. Before pushing, I will verify that all necessary files and changes have been staged and committed using `git status` and `git diff --staged`.
-5. Feature branches will be pushed to the remote `origin`.
-6. I will notify you to create a merge request on GitHub after pushing a feature branch.
-7. A build pipeline will be used to automate testing.
-8. Unit tests will be added for new features.
