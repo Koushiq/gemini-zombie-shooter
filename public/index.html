@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Multiplayer Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lobbyContainer">
+        <div class="container">
+            <h1>Zombie Annihilation</h1>
+            <div id="player-info">
+                <input type="text" id="playerNameInput" placeholder="Enter your name">
+                <p class="warning">If the name is already taken, a unique postfix will be added.</p>
+            </div>
+            <div id="createLobbyContainer">
+                <input type="text" id="lobbyNameInput" placeholder="Enter lobby name">
+                <button id="createLobbyBtn">Create Lobby</button>
+            </div>
+            <button id="startGameBtn" style="display: none;">Start Game</button>
+            <div id="lobby-list-container">
+                <h2>Available Lobbies</h2>
+                <ul id="lobbyList"></ul>
+            </div>
+        </div>
+    </div>
+    <div id="gameContainer" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+        <div id="hud">
+            <div id="player-health"></div>
+            <div id="wave-info"></div>
+            <div id="ping"></div>
+            <div id="fps"></div>
+        </div>
+    </div>
+    <script src="socket.io.js?v=1"></script>
+    <script type="module" src="assetLoader.js?v=1"></script>
+    <script type="module" src="game.js?v=1"></script>
+</body>
+</html>
