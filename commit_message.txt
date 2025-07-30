@@ -1,1 +1,1 @@
-feature/0-test-workflow: Update Jest dependencies
+feature/0-test-workflow: Add initial test for gameLogic
