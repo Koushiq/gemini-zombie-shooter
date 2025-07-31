@@ -17,6 +17,8 @@ const playerNameInput = document.getElementById('playerNameInput');
 const lobbyList = document.getElementById('lobbyList');
 const gameContainer = document.getElementById('gameContainer');
 const gameCanvas = document.getElementById('gameCanvas');
+gameCanvas.width = 800;
+gameCanvas.height = 600;
 const ctx = gameCanvas.getContext('2d');
 const playerHealthDiv = document.getElementById('player-health');
 const pingDiv = document.getElementById('ping');
@@ -186,7 +188,3 @@ function gameLoop(currentTime) {
     }
 }
 
-window.addEventListener('resize', () => {
-    gameCanvas.width = window.innerWidth;
-    gameCanvas.height = window.innerHeight;
-});
