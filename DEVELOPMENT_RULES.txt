@@ -1,0 +1,39 @@
+# Development Rules
+
+This document outlines the development rules and guidelines for this project.
+
+## Branching Strategy
+
+**IMPORTANT:** Before writing any code, switch to the `develop` branch and create a new feature branch from it. NEVER commit directly to `main` or `develop`.
+
+-   **main:** This branch is for production-ready code only. All changes must come from pull requests.
+-   **develop:** This is the main development branch. All feature branches should be based on this branch.
+-   **feature/\*:** Create a new branch for each new feature (e.g., `feature/player-chat`).
+
+## Commit Messages
+
+Please follow the [Conventional Commits](https://www.conventionalcommits.org/) specification. Each commit message should consist of a header, a body, and a footer.
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+-   **type:** Must be one of the following: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+-   **scope:** Optional, can be anything specifying the place of the commit change.
+-   **description:** A short summary of the code changes.
+
+## Code Style
+
+-   Follow the existing code style.
+-   Use an IDE or editor with support for `.editorconfig` and ESLint to maintain a consistent style.
+-   Write clear and concise comments where necessary.
+
+## Testing
+
+-   All new features should have corresponding tests.
+-   All bug fixes should include a regression test.
+-   Run `npm test` to execute the test suite.

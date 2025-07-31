@@ -4,11 +4,15 @@ let playerAnimationFrame = 0;
 let zombieAnimationFrame = 0;
 let ping = 0;
 
-export const dirtPatches = [
-    { x: 100, y: 100, width: 150, height: 150 },
-    { x: 400, y: 200, width: 200, height: 100 },
-    { x: 250, y: 400, width: 100, height: 200 }
-];
+export const dirtPatches = [];
+for (let i = 0; i < 15; i++) {
+    dirtPatches.push({
+        x: Math.random() * 800,
+        y: Math.random() * 600,
+        width: Math.random() * 100 + 50,
+        height: Math.random() * 100 + 50,
+    });
+}
 
 
 
