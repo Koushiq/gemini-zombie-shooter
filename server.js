@@ -272,6 +272,12 @@ io.on('connection', (socket) => {
                 if (movement.right) newX += PLAYER_SPEED;
                 if (movement.down) newY += PLAYER_SPEED;
 
+                // Boundary checks
+                if (newX < 0) newX = 0;
+                if (newY < 0) newY = 0;
+                if (newX + player.width > MAP_WIDTH) newX = MAP_WIDTH - player.width;
+                if (newY + player.height > MAP_HEIGHT) newY = MAP_HEIGHT - player.height;
+
                 const PLAYER_SIZE = 50; // Assuming player size for collision
 
                 // Check for collision with trees before updating position
