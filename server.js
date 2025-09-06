@@ -13,7 +13,7 @@ const logger = winston.createLogger({
     ),
     transports: [
         new winston.transports.File({ filename: 'app.log' })
-    ]
+    ] 
 });
 
 // If not in production, also log to the console
